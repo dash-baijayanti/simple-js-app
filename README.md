@@ -1,1 +1,1 @@
-# js-app
+#simple-js-app ,the basic knowledge of JavaScript.
