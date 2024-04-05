@@ -1,1 +1,12 @@
-
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-gap: 20px;
+}
+.grid-container>div{
+    border: 1px solid salmon;
+    padding: 20px;
+}
+span{
+    color: blue;
+}

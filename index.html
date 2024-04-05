@@ -3,11 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styles.css" >
+    <link rel="stylesheet" href="./css/styles.css" type="text/css">
     <title>simple javascript app</title>
 </head>
 <body>
-    <h1>Favorite Food:</h1>
+<div class="grid-container">
+    <div>
+        <h1>Pokemon List</h1> 
+        <p>Input one of the following PokNames(<strong>Bulbasaur, Butterfree, Beedrill</strong>) to display the age, then click on 'Submit' button:</p>
+        <form>
+            <label for="username">PokName</label>
+            <input id="username" name="username" type="text">
+            <button type="button">Submit</button>
+        </form> 
+    </div>
+    <div>
+        <h1>PokView</h1>
+        <p>Entered PokName:<span id="username-key"></span>
+            
+            <!-- Pokemon's Height:<span id="pokheight"></span> -->
+            
+            <!-- PokType:<span id="poktype"></span> -->
+        </p>
+    </div>
+
+</div>
+    
  <script src="script.js"></script>   
 </body>
 </html>
