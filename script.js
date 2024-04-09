@@ -47,10 +47,10 @@ document.querySelector("button").addEventListener("click", () => {
 for (i = 0; i<pokemonList.length; i++){ 
 
   if(pokemonList[i].height<10 && pokemonList[i].height>5 ){
-  document.write(`<p class="for">Pokname-${pokemonList[i].pokName},  (height-${pokemonList[i].height})"Wow that's big",  types-[ ${pokemonList[i].types}]</p><br>`);
+  document.write(`<p class="for">Pokname-${pokemonList[i].pokName},  (height-${pokemonList[i].height})-"Wow that's big",  types-[ ${pokemonList[i].types}]</p><br>`);
   }else if(pokemonList[i].height>=1){
-    document.write(`<p class="for"> Pokname-${pokemonList[i].pokName},  (height-${pokemonList[i].height})"Medium",  types-[ ${pokemonList[i].types}]</p><br>`); 
+    document.write(`<p class="for"> Pokname-${pokemonList[i].pokName},  (height-${pokemonList[i].height})-"Medium",  types-[ ${pokemonList[i].types}]</p><br>`); 
   }else{
-    document.write(`<p class="for"> Pokname-${pokemonList[i].pokName}  (height-${pokemonList[i].height})"Small",  types-[ ${pokemonList[i].types}]</p>`);
+    document.write(`<p class="for"> Pokname-${pokemonList[i].pokName}  (height-${pokemonList[i].height})-"Small",  types-[ ${pokemonList[i].types}]</p>`);
   }
 };

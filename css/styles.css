@@ -7,6 +7,8 @@
     box-sizing: border-box;
     position: relative;
     clear: both;
+    margin: 10px;
+    padding: 10px;
 }
 body{
     background-color: rgb(226, 240, 191);
@@ -15,7 +17,7 @@ body{
 .grid-container>div{
     display: grid;
     grid-template-columns: 50% 50%;
-    border: 1px solid salmon;
+    border: 2px solid salmon;
     padding: 20px;
 }
 @media all and (max-width: 500px) {
