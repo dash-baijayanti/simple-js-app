@@ -1,12 +1,53 @@
+@supports (display: grid){
 .grid-container{
     display: grid;
     grid-template-columns: 1fr 1fr ;
     grid-gap: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    clear: both;
+}
+body{
+    background-color: rgb(226, 240, 191);
+}
 }
 .grid-container>div{
+    display: grid;
+    grid-template-columns: 50% 50%;
     border: 1px solid salmon;
     padding: 20px;
 }
+@media all and (max-width: 500px) {
+    .grid-container{
+      grid-template-columns: 1fr;
+      font-size: 8px;
+    }
+}
+@media all and (min-width:500px) and(max-width:750px){
+    .grid-container{
+        grid-template-columns: 1fr 1fr;
+        font-size: 12px;
+    }
+}
+@media all and (max-width: 750px) {
+    .grid-container{
+      grid-template-columns: 1fr 1fr;
+      font-size: 20px;
+    }
+}
 span{
     color: blue;
+}
+p{
+    color: brown;
+    clear: both;
+}
+.for{
+    color: rgb(9, 87, 232);
+}
+h1{
+    color: rgb(5, 87, 87);
+    text-align: center;
+    margin: 0%;
 }
