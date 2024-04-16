@@ -8,7 +8,7 @@ document.querySelector("button").addEventListener("click", () => {
   let currentUserName = document.querySelector("#username").value;
   document.querySelector("#username-key").innerText = currentUserName;
 
-  // for (i = 0; i<pokemonList.length; i++) {
+  // condition for submit button
     if (currentUserName == "Bulbasaur") {
       // document.querySelector("#pokheight").innerText = 0;
       document.querySelector("#pokheight").innerText = pokemonList[0].height;
@@ -25,6 +25,7 @@ document.querySelector("button").addEventListener("click", () => {
     } else {
       document.write("wrong input");
     }
+    // condition for image button
     const showImageButton = document.getElementById("show-image");
       const myImage = document.getElementById("image");
       const myImage2 = document.getElementById("image-2");
@@ -43,14 +44,19 @@ document.querySelector("button").addEventListener("click", () => {
       });
    
 });
+// using for loop for showing the pokemonList details
+// for (let i = 0; i<pokemonList.length; i++){ 
 
-for (i = 0; i<pokemonList.length; i++){ 
+//   if(pokemonList[i].height<10 && pokemonList[i].height>5 ){
+//   document.write(`<p class="for">Pokname-${pokemonList[i].pokName},  (height-${pokemonList[i].height})-"Wow that's big",  types-[ ${pokemonList[i].types}]</p><br>`);
+//   }else if(pokemonList[i].height>=1){
+//     document.write(`<p class="for"> Pokname-${pokemonList[i].pokName},  (height-${pokemonList[i].height})-"Medium",  types-[ ${pokemonList[i].types}]</p><br>`); 
+//   }else{
+//     document.write(`<p class="for"> Pokname-${pokemonList[i].pokName}  (height-${pokemonList[i].height})-"Small",  types-[ ${pokemonList[i].types}]</p>`);
+//   }
+// };
 
-  if(pokemonList[i].height<10 && pokemonList[i].height>5 ){
-  document.write(`<p class="for">Pokname-${pokemonList[i].pokName},  (height-${pokemonList[i].height})-"Wow that's big",  types-[ ${pokemonList[i].types}]</p><br>`);
-  }else if(pokemonList[i].height>=1){
-    document.write(`<p class="for"> Pokname-${pokemonList[i].pokName},  (height-${pokemonList[i].height})-"Medium",  types-[ ${pokemonList[i].types}]</p><br>`); 
-  }else{
-    document.write(`<p class="for"> Pokname-${pokemonList[i].pokName}  (height-${pokemonList[i].height})-"Small",  types-[ ${pokemonList[i].types}]</p>`);
-  }
-};
+// using forEach() for showing the pokemonList details
+pokemonList.forEach (function(details){
+  document.write("<p>Pokemon name:</p>"+''+ details.pokName ,"<p>Height:</p>" +''+ details.height, "<p>Pok Types:</p>" +' '+ details.types);
+});
