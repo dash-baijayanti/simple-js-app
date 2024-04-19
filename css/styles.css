@@ -1,44 +1,9 @@
-@supports (display: grid){
-.grid-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr ;
-    grid-gap: 20px;
-    text-align: center;
-    box-sizing: border-box;
-    position: relative;
-    clear: both;
-    margin: 10px;
-    padding: 10px;
-}
+
 
 body{
     background-color: rgb(226, 240, 191);
 }
-}
-.grid-container >div{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    border: 2px solid salmon;
-    padding: 20px;
-}
-@media all and (max-width: 500px) {
-    .grid-container{
-      grid-template-columns: 1fr;
-      font-size: 8px;
-    }
-}
-@media all and (min-width:500px) and(max-width:750px){
-    .grid-container{
-        grid-template-columns: 1fr 1fr;
-        font-size: 12px;
-    }
-}
-@media all and (max-width: 750px) {
-    .grid-container{
-      grid-template-columns: 1fr 1fr;
-      font-size: 20px;
-    }
-}
+
 span{
     color: blue;
 }
@@ -46,11 +11,25 @@ p{
     color: brown;
     clear: both;
 }
-.for{
-    color: rgb(9, 87, 232);
-}
+
 h1{
     color: rgb(5, 87, 87);
     text-align: center;
     margin: 0%;
+}
+.button-class{
+    border: 2px solid rgb(111, 140, 232);
+    box-shadow: 6px 6px 6px gray;
+    height:30px;
+    width: 150px;
+    margin-bottom: 15px;
+    background-color: rgb(233, 193, 72);
+    font-size: larger;
+    cursor: pointer;
+}
+#demo{
+    display: none;
+}
+#demo.visible{
+    display: block;
 }
