@@ -24,6 +24,7 @@ h1{
     text-align: center;
     margin: 0%;
 }
+/* }
 .button-class{
     border: 2px solid rgb(111, 140, 232);
     box-shadow: 6px 6px 6px gray;
@@ -67,7 +68,7 @@ h1{
     align-content: center;
     text-align: center;
     padding: 20px;
-}
+} */
 .close-button{
     float: right;
    height: 30px;
@@ -76,4 +77,23 @@ h1{
 }
 h2{
    color: rgb(79, 35, 4);
+}
+body{
+    background-color: aquamarine;
+}
+.showDetailsOfPokemon{
+    background-color: rgb(139, 248, 175);
+    height: auto;
+    width: 50%;
+    position: relative;
+    /* justify-content: center; */
+    /* xalign-content: center; */
+    text-align: center;
+    padding: 20px;
+    border: 2px solid salmon;
+    margin: 10px;
+    left: 25%;
+    border-radius: 20px;
+    box-shadow: 2px 3px 3px 5px rgb(59, 185, 240);
+
 }
