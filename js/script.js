@@ -1,3 +1,37 @@
+jQuery(document).ready(function () {
+  // Function to fetch Pokémon details from the API based on the name
+  function fetchPokemonDetails(pokemonName) {
+    console.log($);
+    return jQuery.getJSON(`https://pokeapi.co/api/v2/pokemon/${ pokemonName }`);
+
+  }
+
+  // Event handler for search button click
+  $("#searchButton").click(function () {
+    // Get search query
+    var query = $("#searchInput").val();
+
+    // Fetch Pokémon details based on search query
+    fetchPokemonDetails(query)
+      .then(function (pokemonData) {
+        // Display Pokémon details
+        var details = `
+                  <div class="card">
+                      <div class="card-body">
+                          <h5 class="card-title">${ pokemonData.name }</h5>
+                          <p class="card-text">Height: ${ pokemonData.height } | Weight: ${ pokemonData.weight }</p>
+                          <img src="${ pokemonData.sprites.front_default }" class="img-fluid" alt="Pokemon Image">
+                      </div>
+                  </div>
+              `;
+        $("#pokemonDetails").empty().append(details);
+      })
+      .catch(function () {
+        // Handle error if Pokémon details not found
+        $("#pokemonDetails").empty().text("Pokémon details not found.");
+      });
+  });
+});
 let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
@@ -18,8 +52,8 @@ let pokemonRepository = (function () {
     let imageelementBack = $('<img class="modal-img" style="width:50%">');
     imageelementBack.attr("src", item.imageUrlBack);
 
-    let heightElement = $("<p>" + "Height:" + item.height + "<p>");
-    let typesElement = $("<p>" + "Types:" + item.types + "<p>");
+    let heightElement = $("<h2>" + "Height:" + item.height + "<h2>");
+    let typesElement = $("<h2>" + "Types:" + item.types + "<h2>");
     
 
     modalTitel.append(nameElement);
@@ -27,11 +61,7 @@ let pokemonRepository = (function () {
     modalBody.append(imageelementBack);
     modalBody.append(heightElement);
     modalBody.append(typesElement);
-  
-    //  console.log(item.name);
-     console.log(item);
   }
-
   
 
   // Function to add a Pokemon to the repository
@@ -73,7 +103,6 @@ let pokemonRepository = (function () {
       });  
       }
   
-
   //  functions to fetch the pokemon details from API
   function loadList() {
     return fetch(apiUrl)
@@ -114,11 +143,14 @@ let pokemonRepository = (function () {
         console.error(e);
       });
   }
+   
+ 
 
   // function shows the each details of button
   function showDetails(item) {
     pokemonRepository.loadDetails(item).then(function () {
       showPokemonModal(item);
+      // fetchPokemonDetails(item);
     });
   }
 
@@ -128,7 +160,8 @@ let pokemonRepository = (function () {
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails,
-    showDetails: showDetails,
+    showDetails: showDetails
+    
   };
 })();
 
@@ -137,3 +170,5 @@ pokemonRepository.loadList().then(function () {
     pokemonRepository.addListItem(pokemon);
   });
 });
+
+
