@@ -1,41 +1,6 @@
-jQuery(document).ready(function () {
-  // Function to fetch Pokémon details from the API based on the name
-  function fetchPokemonDetails(pokemonName) {
-    console.log($);
-    return jQuery.getJSON(`https://pokeapi.co/api/v2/pokemon/${ pokemonName }`);
-
-  }
-
-  // Event handler for search button click
-  $("#searchButton").click(function () {
-    // Get search query
-    var query = $("#searchInput").val();
-
-    // Fetch Pokémon details based on search query
-    fetchPokemonDetails(query)
-      .then(function (pokemonData) {
-        // Display Pokémon details
-        var details = `
-                  <div class="card">
-                      <div class="card-body">
-                          <h5 class="card-title">${ pokemonData.name }</h5>
-                          <p class="card-text">Height: ${ pokemonData.height } | Weight: ${ pokemonData.weight }</p>
-                          <img src="${ pokemonData.sprites.front_default }" class="img-fluid" alt="Pokemon Image">
-                      </div>
-                  </div>
-              `;
-        $("#pokemonDetails").empty().append(details);
-      })
-      .catch(function () {
-        // Handle error if Pokémon details not found
-        $("#pokemonDetails").empty().text("Pokémon details not found.");
-      });
-  });
-});
 let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
-  let modalContainer = document.querySelector("#modal-container");
   
 
   // modal function with bootstrap
@@ -83,18 +48,12 @@ let pokemonRepository = (function () {
     let pokDiv = $("<div></div>").addClass('showDetailsOfPokemon');
     let nameOfElement = $("<h2></h2>").text(pokemon.name);
      nameOfElement.appendTo(pokDiv);
-     
-     let elementOfPok = $(".pokemon-list");
-     let listItems = $("<li></li>");
 
      let button = $("<button></button>")
                   .addClass('btn btn-primary')
                   .attr("data-toggle", "modal")
                   .attr("data-target", "#exampleModal") 
                   .text(pokemon.name);
-    
-    button.append(elementOfPok);
-    elementOfPok.append(listItems);
     button.appendTo(pokDiv);
     pokDiv.appendTo("body");
     $(button).click(function(){
