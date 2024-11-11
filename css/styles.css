@@ -4,7 +4,6 @@
     justify-content: center;
     padding-top: 50px;
     padding-bottom: 50px;
-    height: 300px;
     margin-top: 20px;
 }
 
@@ -44,9 +43,6 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
-    margin-left: 35px;
-    margin-right: 35px;
-    border-radius: 12px;
     height: auto;
     width: 50%;
     position: relative;

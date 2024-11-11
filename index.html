@@ -13,7 +13,7 @@
 
   <body>
     <!-- <img class="imgclass" src="img/International_Pokémon_logo.svg.png" height="100" width="300" alt="logo"> -->
-    <div class="grid-container">
+    <div class="grid-container" height="200">
 
       <!--bootstraps custom buttons and nav style  -->
       <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -29,48 +29,8 @@
             alt="Pokémon Logo">
           List of Pokemons
         </a>
-        <form class="form-inline ml-auto" onsubmit="searchPokemon(event)">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search by name" aria-label="Search"
-            id="pokemonSearch">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+
       </nav>
-
-      <script>
-        async function searchPokemon(event) {
-          event.preventDefault();  // Prevent form submission
-          const pokemonName = document.getElementById('pokemonSearch').value.toLowerCase();
-
-          if (!pokemonName) {
-            alert('Please enter a Pokémon name!');
-            return;
-          }
-
-          const url = `https://pokeapi.co/api/v2/pokemon/${ pokemonName }`;
-
-          try {
-            const response = await fetch(url);
-            const data = await response.json();
-
-            // Display Pokémon data in the modal
-            const modalTitle = document.querySelector('.modal-title');
-            const modalBody = document.querySelector('.modal-body');
-            modalTitle.innerHTML = `Found: ${ data.name }`;
-            modalBody.innerHTML = `
-      <img src="${ data.sprites.front_default }" alt="${ data.name }" class="img-fluid">
-      <p>Height: ${ data.height }</p>
-      <p>Weight: ${ data.weight }</p>
-      <p>Types: ${ data.types.map(type => type.type.name).join(', ') }</p>
-    `;
-
-            // Show the modal
-            $('#exampleModal').modal('show');
-
-          } catch (error) {
-            alert('Pokémon not found!');
-          }
-        }
-      </script>
 
 
 
