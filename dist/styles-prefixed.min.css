@@ -7,13 +7,15 @@
 }
 body {
   display: grid;
-  /* place-items: center; */
-  min-height: 100px;
-  background: #f5d13e;
+  place-items: center; /* Centering the Pokéball */
+  min-height: 100vh; /* Fill viewport height */
+  margin: 0;
+  background: #f5d13e; /* Background color */
 }
+
 .pokeball {
-  margin-top: 20px ;
-  margin-bottom: 20;
+  margin-top: 20px;
+  margin-bottom: 20px; /* Fixed unit here */
   display: block;
   width: 120px;
   height: 120px;
@@ -32,7 +34,8 @@ body {
     shake 1.25s cubic-bezier(0.36, 0.07, 0.19, 0.97) 1.5s 3,
     catch 0.5s ease-out 5.25s forwards;
 }
-/* Animation */
+
+/* Animation Keyframes */
 @keyframes shake {
   0% {
     transform: translateX(0) rotate(0);
@@ -53,6 +56,7 @@ body {
     transform: translateX(0) rotate(0);
   }
 }
+
 @keyframes fall {
   0% {
     transform: translateY(-200%);
@@ -67,6 +71,7 @@ body {
     transform: translateY(0);
   }
 }
+
 @keyframes catch {
   to {
     filter: saturate(0.8) brightness(0.8);
