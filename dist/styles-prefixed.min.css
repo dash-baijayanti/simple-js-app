@@ -1,24 +1,97 @@
-.card,h1{text-align:center}.grid-container{background-color:#eceee8;display:flex;justify-content:center;margin-top: 20px;margin-bottom: 20px; height: 100px;}
-.imgclass{display:block;justify-content:center}span{color:#00f}p{color:brown;clear:both}h1{color:#055757;margin:0}
-.close-button{float:right;height:30px;width:auto}h2{color:#4f2304}body{background-color:#7fffd4}
-.showDetailsOfPokemon{background-color:#8bf8af;left:25%;width:50% ; height:auto;position:relative;text-align:center;padding:20px;border:2px solid salmon;margin:10px;border-radius:20px;box-shadow:2px 3px 3px 5px #3bb9ff}.modal-content{background-color:#f0d2aa;border-radius:20px;border:2px solid #6a5acd;box-shadow:2px 3px 3px #6a5acd}.card{background-color:rgba(249,248,250,.979);border:3px solid rgba(250,128,114,.189);top:0;width:auto}
+/* General Reset and Basic Styling */
 * {
   box-sizing: border-box;
 }
 body {
   display: grid;
-  place-items: center; /* Centering the Pokéball */
-  min-height: 100vh; /* Fill viewport height */
+  place-items: center;
+  min-height: 100vh; /* Full viewport height */
   margin: 0;
-  background: #f5d13e; /* Background color */
+  background: #f5d13e; /* Global background color */
+  font-family: Arial, sans-serif;
 }
 
+/* Text Styling */
+h1, h2 {
+  text-align: center;
+}
+h1 {
+  color: #055757;
+  margin: 0;
+}
+h2 {
+  color: #4f2304;
+}
+p {
+  color: brown;
+  clear: both;
+}
+span {
+  color: #00f; /* Blue-colored spans */
+}
+
+/* Container Styling */
+.grid-container {
+  background-color: #eceee8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 100px;
+}
+
+/* Card Styling */
+.card {
+  background-color: rgba(249, 248, 250, 0.98);
+  border: 3px solid rgba(250, 128, 114, 0.19); /* Subtle border */
+  padding: 20px;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Image and Button Styling */
+.imgclass {
+  display: block;
+  justify-content: center;
+}
+.close-button {
+  float: right;
+  height: 30px;
+  width: auto;
+}
+
+/* Modal and Pokemon Details */
+.showDetailsOfPokemon {
+  background-color: #8bf8af;
+  width: 50%;
+  padding: 20px;
+  margin: 10px auto;
+  position: relative;
+  border: 2px solid salmon;
+  border-radius: 20px;
+  box-shadow: 2px 3px 3px 5px #3bb9ff;
+  text-align: center;
+}
+
+.modal-content {
+  background-color: #f0d2aa;
+  border-radius: 20px;
+  padding: 15px;
+  border: 2px solid #6a5acd;
+  box-shadow: 2px 3px 3px rgba(106, 90, 205, 0.3);
+}
+
+/* Pokéball Styling and Animation */
 .pokeball {
   margin-top: 20px;
-  margin-bottom: 20px; /* Fixed unit here */
+  margin-bottom: 20px;
   display: block;
   width: 120px;
   height: 120px;
+  border-radius: 50%;
+  border: 8px solid rgb(59, 58, 58);
   background: radial-gradient(
       white 16px,
       black 17px 18px,
@@ -27,53 +100,71 @@ body {
       transparent 33px
     ),
     linear-gradient(to bottom, rgb(254, 52, 52) 0 80px, rgb(88, 86, 86) 81px 96px, white 97px 100%);
-  border-radius: 50%;
-  border: 8px solid rgb(59, 58, 58);
   box-shadow: inset -16px -8px 0 0 rgba(0, 0, 0, 0.2);
-  animation: fall 0.5s ease-in-out 1s,
-    shake 1.25s cubic-bezier(0.36, 0.07, 0.19, 0.97) 1.5s 3,
-    catch 0.5s ease-out 5.25s forwards;
+  animation: fall 0.5s ease-in-out 1s, shake 1.25s cubic-bezier(0.36, 0.07, 0.19, 0.97) 1.5s 3, catch 0.5s ease-out 5.25s forwards;
 }
 
 /* Animation Keyframes */
 @keyframes shake {
-  0% {
-    transform: translateX(0) rotate(0);
-  }
-  20% {
-    transform: translateX(-10px) rotate(-20deg);
-  }
-  30% {
-    transform: translateX(10px) rotate(20deg);
-  }
-  50% {
-    transform: translateX(-10px) rotate(-10deg);
-  }
-  60% {
-    transform: translateX(10px) rotate(10deg);
-  }
-  100% {
-    transform: translateX(0) rotate(0);
-  }
+  0%, 100% { transform: translateX(0) rotate(0); }
+  20% { transform: translateX(-10px) rotate(-20deg); }
+  30% { transform: translateX(10px) rotate(20deg); }
+  50% { transform: translateX(-10px) rotate(-10deg); }
+  60% { transform: translateX(10px) rotate(10deg); }
 }
 
 @keyframes fall {
-  0% {
-    transform: translateY(-200%);
-  }
-  60% {
-    transform: translateY(0);
-  }
-  80% {
-    transform: translateY(-10%);
-  }
-  100% {
-    transform: translateY(0);
-  }
+  0% { transform: translateY(-200%); }
+  60% { transform: translateY(0); }
+  80% { transform: translateY(-10%); }
+  100% { transform: translateY(0); }
 }
 
 @keyframes catch {
-  to {
-    filter: saturate(0.8) brightness(0.8);
+  to { filter: saturate(0.8) brightness(0.8); }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  /* Body Adjustments */
+  body {
+    background: #f5d13e; /* Keeping the same background color */
+    padding: 10px;
+  }
+
+  /* Text and Header Adjustments */
+  h1 {
+    font-size: 28px; /* Reduce font size for mobile */
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  /* Grid Container for Responsiveness */
+  .grid-container {
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+  }
+
+  /* Modal and Pokemon Details */
+  .showDetailsOfPokemon {
+    width: 90%; /* Take up more space on smaller screens */
+    padding: 15px;
+  }
+
+  .pokeball {
+    width: 100px; /* Smaller Pokéball on mobile */
+    height: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  /* Card Adjustments */
+  .card {
+    width: 100%; /* Make card full width on mobile */
+    margin: 0 auto;
+    padding: 10px;
   }
 }
