@@ -40,6 +40,6 @@ Other dependencies include
 
 ---
 
-<img src="pok/Screenshot 2024-11-11 225640.png" alt="home" width="300" height="500">
-<img src="pok/Screenshot 2024-11-11 225708.png" alt="home" width="300" height="500">
+<img src="pok/Screenshot 2024-11-11 225640.png" alt="home" width="500" height="300">
+<img src="pok/Screenshot 2024-11-11 225708.png" alt="home" width="500" height="300">
 
